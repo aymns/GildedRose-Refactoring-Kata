@@ -5,6 +5,16 @@ using NUnit.Framework;
 
 namespace csharp
 {
+    [SetUpFixture]
+    public class TestsConfiguration
+    {
+        [OneTimeSetUp]
+        public void RunBeforeAnyTests()
+        {
+            Environment.CurrentDirectory = TestContext.CurrentContext.TestDirectory;
+        }
+    }
+
     [TestFixture]
     public class ApprovalTest
     {
@@ -23,7 +33,7 @@ namespace csharp
             var outputLines = output.Split('\n');
             for(var i = 0; i<Math.Min(lines.Length, outputLines.Length); i++) 
             {
-                Assert.AreEqual(lines[i], outputLines[i]);
+                Assert.AreEqual(lines[i].Trim(), outputLines[i].Trim());
             }
         }
     }
