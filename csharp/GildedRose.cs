@@ -4,13 +4,7 @@ namespace csharp
 {
     public class GildedRose
     {
-        IList<Item> Items;
-        public GildedRose(IList<Item> Items)
-        {
-            this.Items = Items;
-        }
-
-        public void UpdateQuality()
+        public static void UpdateQuality(IList<Item> Items)
         {
             for (var i = 0; i < Items.Count; i++)
             {

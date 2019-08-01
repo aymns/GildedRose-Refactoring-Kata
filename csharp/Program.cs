@@ -10,8 +10,6 @@ namespace csharp
 
             var items = new ItemRepository().GetAll();
 
-            var app = new GildedRose(items);
-
 
             for (var day = 0; day < 31; day++)
             {
@@ -22,7 +20,7 @@ namespace csharp
                     System.Console.WriteLine(item);
                 }
                 Console.WriteLine("");
-                app.UpdateQuality();
+                GildedRose.UpdateQuality(items);
             }
         }
     }

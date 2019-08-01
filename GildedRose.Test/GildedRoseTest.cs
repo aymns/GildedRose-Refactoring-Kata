@@ -11,8 +11,7 @@ namespace GildedRose.Test
         public void EmptyInventory_UpdateQuality_NoErrors()
         {
             var items = new List<Item> {};
-            var app = new csharp.GildedRose(items);
-            app.UpdateQuality();
+            csharp.GildedRose.UpdateQuality(items);
             Assert.AreEqual(0, items.Count);
         }
     }
