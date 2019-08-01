@@ -1,20 +1,11 @@
 ﻿using System;
 using System.IO;
 using System.Text;
+using csharp;
 using NUnit.Framework;
 
-namespace csharp
+namespace GildedRose.Test
 {
-    [SetUpFixture]
-    public class TestsConfiguration
-    {
-        [OneTimeSetUp]
-        public void RunBeforeAnyTests()
-        {
-            Environment.CurrentDirectory = TestContext.CurrentContext.TestDirectory;
-        }
-    }
-
     [TestFixture]
     public class ApprovalTest
     {
