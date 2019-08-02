@@ -8,7 +8,7 @@ namespace GildedRose.Test
     public class ConjuredItemTest
     {
         [Test]
-        public void SellInDateNotPassed_UpdateQuality_QualityDecreasedBy1()
+        public void SellInDateNotPassed_UpdateQuality_QualityDecreasedBy2()
         {
             var quality = 20;
             var item = new Item
@@ -20,11 +20,11 @@ namespace GildedRose.Test
             var items = new List<Item> { item };
 
             csharp.GildedRose.UpdateQuality(items);
-            Assert.AreEqual(quality - 1, item.Quality);
+            Assert.AreEqual(quality - 2, item.Quality);
         }
 
         [Test]
-        public void SellInDatePassed_UpdateQuality_QualityDecreasedBy2()
+        public void SellInDatePassed_UpdateQuality_QualityDecreasedBy4()
         {
             var quality = 20;
             var item = new Item
@@ -36,7 +36,7 @@ namespace GildedRose.Test
             var items = new List<Item> { item };
 
             csharp.GildedRose.UpdateQuality(items);
-            Assert.AreEqual(quality - 2, item.Quality);
+            Assert.AreEqual(quality - 4, item.Quality);
         }
     }
 }
